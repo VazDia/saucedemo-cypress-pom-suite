@@ -1,6 +1,3 @@
-C'est parfait, cette version est encore plus précise car elle donne au recruteur les commandes directes pour chaque script que tu as développé. J'ai intégré ta mention sur la `baseUrl` et corrigé la commande `git clone`.
-
-Voici le contenu complet à copier dans ton fichier **README.md** :
 
 ---
 
@@ -8,7 +5,7 @@ Voici le contenu complet à copier dans ton fichier **README.md** :
 
 Ce projet présente une suite de tests automatisés pour le site [SauceDemo](https://www.saucedemo.com/), réalisée avec **Cypress**. L'objectif est de valider les flux critiques de l'application en utilisant une architecture robuste et évolutive.
 
-## 🏗️ Architecture du Projet
+## Architecture du Projet
 
 Le projet utilise le design pattern **Page Object Model (POM)** pour assurer une maintenance facile et une haute lisibilité des tests.
 
@@ -16,7 +13,7 @@ Le projet utilise le design pattern **Page Object Model (POM)** pour assurer une
 * **`cypress/support/page_objects/`** : Centralisation des sélecteurs et des méthodes d'action (encapsulation).
 * **`cypress.config.js`** : Configuration globale. **L'URL de base (`baseUrl`) est configurée ici**, permettant une gestion centralisée de l'environnement de test.
 
-## 🧪 Scénarios de Tests couverts
+##  Scénarios de Tests couverts
 
 1. **Authentification** : Validation des accès (succès, échec mot de passe, champs obligatoires).
 2. **Gestion du panier** : Ajout dynamique et retrait d'articles avec mise à jour du badge.
@@ -24,7 +21,7 @@ Le projet utilise le design pattern **Page Object Model (POM)** pour assurer une
 4. **Détails produits** : Vérification de la cohérence des informations sur la page dédiée.
 5. **Déconnexion** : Fermeture de session et redirection sécurisée.
 
-## 🚀 Installation
+## Installation
 
 1. **Cloner le projet** :
 ```bash
@@ -40,7 +37,7 @@ cd saucedemo-cypress-pom-suite
     npm install
     ```
 
-## 🖥️ Exécution des Tests
+## Exécution des Tests
 
 ### 1. Interface Graphique (Interactif)
 Pour ouvrir le Test Runner de Cypress :
@@ -85,7 +82,7 @@ npx cypress run --spec "cypress/e2e/inventory/viewProduct.cy.js"
 
 ---
 
-### 👨‍💻 Auteur
+### Auteur
 
 **Vazoumana Diarrassouba**
 *Projet réalisé dans le cadre d'un test technique d'automatisation QA.*
