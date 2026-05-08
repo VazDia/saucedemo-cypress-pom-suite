@@ -1,7 +1,6 @@
+C'est parfait, cette version est encore plus précise car elle donne au recruteur les commandes directes pour chaque script que tu as développé. J'ai intégré ta mention sur la `baseUrl` et corrigé la commande `git clone`.
 
-**`saucedemo-cypress-pom-suite`**
-
-Et voici le README optimisé, propre et prêt à l'emploi.
+Voici le contenu complet à copier dans ton fichier **README.md** :
 
 ---
 
@@ -15,7 +14,7 @@ Le projet utilise le design pattern **Page Object Model (POM)** pour assurer une
 
 * **`cypress/e2e/`** : Scripts de tests organisés par modules métier (Authentification, Inventaire).
 * **`cypress/support/page_objects/`** : Centralisation des sélecteurs et des méthodes d'action (encapsulation).
-* **`cypress.config.js`** : Configuration globale incluant la `baseUrl` et les paramètres d'environnement.
+* **`cypress.config.js`** : Configuration globale. **L'URL de base (`baseUrl`) est configurée ici**, permettant une gestion centralisée de l'environnement de test.
 
 ## 🧪 Scénarios de Tests couverts
 
@@ -29,7 +28,7 @@ Le projet utilise le design pattern **Page Object Model (POM)** pour assurer une
 
 1. **Cloner le projet** :
 ```bash
-git https://github.com/VazDia/saucedemo-cypress-pom-suite.git
+git clone https://github.com/VazDia/saucedemo-cypress-pom-suite.git
 cd saucedemo-cypress-pom-suite
 
 ```
@@ -59,7 +58,7 @@ npx cypress run
 
 ```
 
-### 3. Exécution ciblée (par Module)
+### 3. Exécution ciblée (par Script)
 
 Pour lancer un fichier de test spécifique :
 
@@ -67,19 +66,22 @@ Pour lancer un fichier de test spécifique :
 # Authentification
 npx cypress run --spec "cypress/e2e/auth/login.cy.js"
 
-# Gestion du panier
+# Déconnexion
+npx cypress run --spec "cypress/e2e/auth/logout.cy.js"
+
+# Ajout d'article au panier
 npx cypress run --spec "cypress/e2e/inventory/addToCart.cy.js"
+
+# Retrait d'article du panier
+npx cypress run --spec "cypress/e2e/inventory/removeFromCart.cy.js"
 
 # Filtres et Tris
 npx cypress run --spec "cypress/e2e/inventory/filterProducts.cy.js"
 
+# Consultation des détails d'un article
+npx cypress run --spec "cypress/e2e/inventory/viewProduct.cy.js"
+
 ```
-
-## 🛠️ Choix Techniques & Robustesse
-
-* **Sélecteurs Dynamiques** : Utilisation de templates literals pour interagir avec des éléments variables (ex: `[data-test="add-to-cart-${id}"]`).
-* **Indépendance des tests** : Utilisation systématique de `beforeEach` pour réinitialiser l'état de l'application.
-* **Fiabilité des données** : Formatage automatique des identifiants (regex) dans les Page Objects pour correspondre aux attributs `data-test` du site.
 
 ---
 
